@@ -1,4 +1,5 @@
 const { Client, Intents, MessageEmbed } = require("discord.js");
+require("dotenv").config();
 
 const bot = new Client({
   intents: [
@@ -12,7 +13,7 @@ bot.on("ready", () => {
   console.log(`Bot ${bot.user.tag} is logged in!`);
 });
 
-bot.login("OTU0NTE1MzkwMzA0NzUxNjk2.YjUPuw.dCAizD_T8xuSUBF_PRXYhkJgijA"); // Replace the macro with your token
+bot.login(process.env.BOT_TOKEN);
 
 bot.on("messageCreate", (message) => {
   if (message.author.bot) {
